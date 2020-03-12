@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 public class FXMLController {
 
 	
-	Parole elenco;
+	Parole elenco = new Parole();
 	
     @FXML
     private ResourceBundle resources;
@@ -41,7 +41,23 @@ public class FXMLController {
 
     @FXML
     void DoDelete(ActionEvent event) {
-
+    	
+    	String parola = txtParola.getText();
+    	
+    	elenco.deleteParola(parola);
+    	
+    	txtResult.clear();
+    	
+    	for(String s : elenco.getElenco()) {
+    		txtResult.appendText(s + "\n");
+    	}
+    	
+    	long tempo = System.nanoTime();
+    	
+    	String time = String.valueOf(tempo);
+    	
+    	lblTime.setText(time);
+    	
     }
 
     @FXML
@@ -56,11 +72,20 @@ public class FXMLController {
     	for(String s : elenco.getElenco()) {
     		txtResult.appendText(s + "\n");
     	}
+    	
+    	long tempo = System.nanoTime();
+    	
+    	String time = String.valueOf(tempo);
+    	
+    	lblTime.setText("Tempo: " + time);
 
     }
 
     @FXML
     void doReset(ActionEvent event) {
+    	
+    	txtResult.clear();
+    	elenco.reset();
 
     }
 

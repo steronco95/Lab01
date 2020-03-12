@@ -26,4 +26,10 @@ public class Parole {
 		elencoParole.clear();
 	}
 
+	public void deleteParola(String parola) {
+		
+		elencoParole.remove(parola);
+		
+	}
+
 }

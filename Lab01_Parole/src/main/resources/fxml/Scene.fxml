@@ -38,10 +38,13 @@
    <bottom>
       <HBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="lblTime" alignment="TOP_LEFT" contentDisplay="RIGHT" />
+            <Label fx:id="lblTime" alignment="BASELINE_LEFT" contentDisplay="RIGHT">
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </HBox.margin></Label>
             <Button fx:id="btnReset" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#doReset" text="Reset" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
                <HBox.margin>
-                  <Insets right="20.0" />
+                  <Insets left="20.0" right="20.0" />
                </HBox.margin>
             </Button>
          </children>
